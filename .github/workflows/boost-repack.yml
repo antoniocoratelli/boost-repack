@@ -1,0 +1,21 @@
+name: boost-repack
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  boost-repack:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Set version
+      run: echo "tag=boost-1.78.0" >> $GITHUB_ENV
+    - name: Checkout GitHub Repository
+      uses: actions/checkout@v2
+    - name: Run script
+      run: bash boost-repack.sh ${{ env.tag }}
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "${{ env.tag }}.tgz"
+        tag: "${{ env.tag }}"
+        token: ${{ secrets.GITHUB_TOKEN }}
