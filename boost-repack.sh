@@ -10,4 +10,4 @@ git clone \
 (cd boost && \
     git ls-files --recurse-submodules \
     | grep -Ev '^"?libs/wave/' \
-    | tar cavf "../$1.tgz" -T-)
+    | zip /var/sdk/boost.zip -@)
