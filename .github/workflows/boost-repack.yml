@@ -16,6 +16,6 @@ jobs:
       run: bash boost-repack.sh ${{ env.tag }}
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "${{ env.tag }}.tgz"
+        artifacts: "${{ env.tag }}.zip"
         tag: "${{ env.tag }}"
         token: ${{ secrets.GITHUB_TOKEN }}
