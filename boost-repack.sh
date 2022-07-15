@@ -10,4 +10,4 @@ git clone \
 (cd boost && \
     git ls-files --recurse-submodules \
     | grep -Ev '^"?libs/wave/' \
-    | zip "$1.zip" -@)
+    | zip "../$1.zip" -@)
