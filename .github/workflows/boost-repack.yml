@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Set version
-      run: echo "tag=boost-1.81.0" >> $GITHUB_ENV
+      run: echo "tag=boost-1.82.0" >> $GITHUB_ENV
     - name: Checkout GitHub Repository
       uses: actions/checkout@v2
     - name: Run script
